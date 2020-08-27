@@ -1,3 +1,6 @@
+// 实现私有变量 在private Field之前。
+const RENDER_TO_DOM = Symbol('render to dom');
+
 // 基础组件
 export class Component {
   constructor(content) {
@@ -21,6 +24,11 @@ export class Component {
     this.appendChild(document.createTextNode(text))
   }
 
+  // 需要一个位置标记range API
+  [RENDER_TO_DOM](range) {
+    this.render()._renderToDOM(range); //递归调用 overwrite
+  }
+
   // 调一下render渲染出root
   // getter
   get root() {
@@ -33,8 +41,20 @@ export class Component {
 
 // // 自定义组件
 export class MyComponent extends Component {
+  constructor() {
+    super();
+    this.state = {
+      a: 1,
+      b: 2,
+    }
+  }
   render() {
-    return <div>MyComponent dddd</div>
+    return <div>
+      <h1>my component</h1>
+      <span>ddd</span>
+      <p>{ this.state.a.toString() }</p>
+      { this.children }
+    </div>
   }
 }
 

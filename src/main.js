@@ -1,19 +1,6 @@
 import { createElement, MyComponent, render } from './toy-react';
 
-let node = <MyComponent id='tiger' class='myDiv' >
-    2311
-    <p class='dd'>等等等</p>
-    <a><span name='adsde'>age</span></a>
-    dddde
-    阿荣
-</MyComponent>;
-
-
 render(<MyComponent id='tiger' class='myDiv' >
-<p class='dd'>等等等</p>
-<a><span name='adsde'>age</span></a>
-dddde
-阿荣
 </MyComponent>, document.body);
 
 // console.log(node);
