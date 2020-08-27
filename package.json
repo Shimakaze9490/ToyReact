@@ -2,7 +2,9 @@
   "name": "toy-react",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/Shimakaze9490/ToyReact.git",
   "license": "MIT",
+  "author": "hejiajin <949034746@qq.com>",
   "dependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-transform-react-jsx": "^7.10.4",
