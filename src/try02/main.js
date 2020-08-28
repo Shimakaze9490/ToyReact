@@ -1,6 +1,5 @@
-function createElement(tagName, attributes, ...children) {
-  // console.log(tagName);
-  const e = document.createElement(tagName);
+function Winter(tagName, attributes, ...children) {
+  const e = document.createElement(tagName); // 实体dom节点。
 
   for (const key in attributes) {
     if (attributes.hasOwnProperty(key)) {
@@ -9,6 +8,7 @@ function createElement(tagName, attributes, ...children) {
     }
   }
 
+  /* 子节点两种情况： string 文本类型； object dom节点类型。 */
   for (const child of children) {
     if (typeof child === 'string') {
       child = document.createTextNode(child);
@@ -18,6 +18,7 @@ function createElement(tagName, attributes, ...children) {
 
     e.appendChild(child); // 构成树状结构 + 递归
   }
+
   return e;
 }
 
@@ -35,9 +36,9 @@ document.body.appendChild(profile);
 
 
 /* 
-  doumnet.createElement 创建dom节点
-  document.createTextNode(val); 创建文本节点
+  doumnet.createElement(tagName) 创建dom节点
+  document.createTextNode(context); 创建文本节点
   dom.setAttribute(key, val); 设置属性
-  dom.appendChild(); 追加子节点
+  dom.appendChild(child); 追加子节点
   
 */
